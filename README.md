@@ -1,7 +1,7 @@
 jsmaz
 ======
 jsmaz is a Java port of the Smaz short string compression algorithm by Salvatore Sanfilippo and released as a C
-library at: github.com/antirez/smaz/tree/master
+library at: https://github.com/antirez/smaz
 
 You can also find a Ruby port by Peter Cooper at: https://github.com/peterc/rsmaz
 
