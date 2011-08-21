@@ -16,9 +16,11 @@
  */
 package com.github.icedrake.jsmaz;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.nio.CharBuffer;
-import java.nio.charset.Charset;
 
 /**
  * Smaz class for compression small strings. Port to java from <a href="https://github.com/antirez/smaz/">antirez</a>
@@ -27,6 +29,7 @@ import java.nio.charset.Charset;
  * @author icedrake
  */
 public class Smaz {
+    private static Logger log = LoggerFactory.getLogger(Smaz.class);
 
     /* Compression CODEBOOK, used for compression */
     private static final String CODEBOOK[] = {
@@ -215,7 +218,7 @@ public class Smaz {
             try {
                 baos.write(str.getBytes());
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("Error outputting verbatim data", e);
             }
         }
     }
